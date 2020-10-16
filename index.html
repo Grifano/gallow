@@ -11,8 +11,9 @@
 
 <body>
   <section class="window">
-    <h1>Gratulation! A word was :)</h1>
-    <div id="js-out"></div>
+    <h1>Congratulations!<br> The word was:</h1>
+    <p id="js-out"></p>
+    <a href="index.html">Play more?</a>
   </section>
 </body>
 <script>
@@ -50,7 +51,7 @@
       }
     }
   }
-  document.getElementById("js-out").innerHTML = word;
+  document.getElementById("js-out").innerHTML = word.toUpperCase();
 </script>
 
 </html>
