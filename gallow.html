@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Game - "Gallow"</title>
+</head>
+
+<body>
+  <section class="window">
+    <h1>Hello! Let's try to guess a word :)</h1>
+    <div id="js-out"></div>
+  </section>
+</body>
+<script>
+  // todo --- Gallows ---
+  // Create array with words
+  var words = ["ira", "polina", "serhii", "katia", "andrej", "viktor", "liudmyla"];
+  // var words = ["steve"];
+  // Get random words
+  var word = words[Math.floor(Math.random() * words.length)];
+  // Showing result
+  var showResult = [];
+  for (var i = 0; i < word.length; i++) {
+    showResult[i] = "_";
+  }
+  var startGame = confirm("Let's play?");
+  var remainingLetters = word.length;
+  // *********************************************************************************************
+  // The main body
+  if (startGame === true) {
+    while (remainingLetters > 0) {
+      // Guess process
+      alert(showResult.join(" "));
+      var guess = prompt("Try to guess letter, or if you don't whant play - press cancel");
+      if (guess === null) {
+        break;
+      } else if (guess.length !== 1) {
+        alert("Please input just one latter!")
+      } else {
+        for (var j = 0; j < word.length; j++) {
+          if (word[j] === guess) {
+            showResult[j] = guess;
+            remainingLetters--;
+            console.log(remainingLetters);
+          }
+        }
+      }
+    }
+  }
+  document.getElementById("js-out").innerHTML = "The word was " + word;
+</script>
+
+</html>
