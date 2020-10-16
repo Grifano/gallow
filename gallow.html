@@ -27,10 +27,10 @@
   for (var i = 0; i < word.length; i++) {
     showResult[i] = "_";
   }
-  var startGame = confirm("Let's play?");
   var remainingLetters = word.length;
   // *********************************************************************************************
   // The main body
+  var startGame = confirm("Let's play?");
   if (startGame === true) {
     while (remainingLetters > 0) {
       // Guess process
@@ -45,7 +45,6 @@
           if (word[j] === guess) {
             showResult[j] = guess;
             remainingLetters--;
-            console.log(remainingLetters);
           }
         }
       }
